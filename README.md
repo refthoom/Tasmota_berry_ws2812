@@ -27,7 +27,7 @@ There is lots of comments in the script itself to help you understand, but here'
 * The function show() is called to display the result.
 
 # testing
-There is one functionality to test the config of your pixels. After the script is manually loaded succesfully in the Berry REPL, you can manually run the command 'show([number])' from the berry scripting console, where [number] is the number of pixels you want to see lit. Note that this will be overwritten by the value from cron as this also runs show().
+There is one functionality to test the config of your pixels. After the script is manually loaded succesfully in the berry scripting console (REPL), you can manually run the command 'show([number])' from the berry scripting console, where [number] is the number of pixels you want to see lit. Note that this will be overwritten by the value from cron as this also runs show().
 
 # deploy
 Use this script as file 'WS2812_scale.be'. In Tasmota web interface, go to main >> tools >> manage files system >> create or upload. Then, if not already there, create the file autoexec.be and add the line 'load('WS2812_scale.be')' in there, without the '. Finally, restart Tasmota from the main menu. After restart, go to main >> tools >> console and check if autoxec.be is loaded syccesfully. As the cron is set to 1 minute interval, it waill take at least a minute before you see any pixels light up.
