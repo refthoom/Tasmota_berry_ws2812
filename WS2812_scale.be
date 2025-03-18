@@ -36,20 +36,24 @@ var sensor_step = 100 # sensor value step for each pixel
 var sensor_start_range = 400
 var sensor_first_threshold = 800 # three colors means two thresholds where the color changes
 var sensor_second_threshold = 1200
-var sensor_end_range = 1600
+var sensor_end_range = 1700
 # number of pixels per color and other settings
+# sensor_step determines the number of pixels being used
 var pixels_min = 1 # fixed number of pixels to be lit on beginning of the scale
 var pixels_skip = 2 # number of pixels to skip for display purposes
+# first range
 var pixels_a = 0
 if (sensor_first_threshold - sensor_start_range) > 0
 	pixels_a = (sensor_first_threshold - sensor_start_range) / sensor_step
 	# print ('pixels_a ', pixels_a) # debug
 end
+# second range
 var pixels_b = 0
 if (sensor_second_threshold - sensor_first_threshold) > 0
 	pixels_b = (sensor_second_threshold - sensor_first_threshold) / sensor_step
 	# print ('pixels_b ', pixels_b) # debug
 end
+# third range
 var pixels_c = 0
 if (sensor_end_range - sensor_second_threshold) > 0
 	pixels_c = (sensor_end_range - sensor_second_threshold) / sensor_step
