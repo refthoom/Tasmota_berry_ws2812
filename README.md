@@ -1,5 +1,5 @@
 # Tasmota_Berry_WS2812
-A berry script for the Tasmota platform to show SCD41 CO2 sensor values on a scale with a WS2812 ring-strip.
+A berry script to show SCD41 CO2 values on a scale with a WS2812 ring-strip.
 
 # description
 This is a berry script to show sensor values on a pixel strip, in three different colors for three sequential ranges. It was developed in march 2025 with an 'ESP32-C3 super mini', an 'SCD41 CO2 sensor' and a '16 pixel WS2812 RGB LED Ring' on 'release-Tasmota32 14.4.1' and with my honest appreciation for the help I recieved from @sfromis.
