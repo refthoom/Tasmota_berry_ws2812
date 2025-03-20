@@ -34,18 +34,18 @@ NOTE: The SCD4x sensor also takes temperature measurements. Please be aware that
 ![CO2 HW](https://github.com/user-attachments/assets/389de6d0-f899-42b8-9761-a223aa8f860a)
 All parts come from Ali***ss, so look there or elsewhere for the names if you want to purchase them.
 
-Visit [this page](https://tasmota.github.io/install/) to install Tasmota. When finished, go to Tasmota web UI's main page >> configuration >> template and fill in as shown here. Hit save and wait for reboot to finish. Then go to main >> configuration >> other, tick the box 'Activate' under 'Template'. Again hit save and wait for the reboot to finish.
+Visit [this page](https://tasmota.github.io/install/) to install Tasmota. When finished, go to Tasmota's (web UI) main page >> configuration >> template and fill in as shown here. Hit save and wait for reboot to finish. Then go to main >> configuration >> other, tick the box 'Activate' under 'Template'. Again hit save and wait for the reboot to finish.
 
 Next, power down your ESP and connect your parts as shown here. After that, power on and connect to the ESP for the software part below. 
 
 # deploy
-Use this script as file 'WS2812_scale.be'. In Tasmota web interface, go to main >> tools >> manage files system >> create or upload >> the 'WS2812_scale.be' file from this repository. Next, if not already there, create the file autoexec.be and add the line 'load('WS2812_scale.be')' in there, without the '. Finally, restart Tasmota from the main menu. After restart, go to main >> tools >> console and check if autoxec.be is loaded successfully. As the cron is set to 1 minute interval, it will take at least one minute before you see any pixels light up.
+Use [the script](https://github.com/refthoom/Tasmota_berry_ws2812/blob/main/WS2812_scale.be) as file 'WS2812_scale.be'. In Tasmota web interface, go to main >> tools >> manage files system >> create or upload >> the 'WS2812_scale.be' file from this repository. Next, if not already there, create the file autoexec.be and add the line 'load('WS2812_scale.be')' in there, without the '. Finally, restart Tasmota from the main menu. After restart, go to main >> tools >> console and check if autoxec.be is loaded successfully. As the cron is set to 1 minute interval, it will take at least one minute before you see any pixels light up.
 
 # testing
 There is one functionality to test the config of your pixels. After the script is *manually* loaded succesfully in the berry scripting console (REPL), you can manually run the command 'show([number])' from the berry scripting console, where [number] is the number of pixels you want to see lit.
 
 # project fulfillment
-A piece of PVC board carries the parts.
+Here, a piece of PVC board carries the parts.
 
 ![front_smaller](https://github.com/user-attachments/assets/a63080fa-fd56-4773-ac3e-f7aece65f87e)
 ![back_smaller](https://github.com/user-attachments/assets/20205be8-7ac2-4d15-9790-9687afd44001)
@@ -54,7 +54,7 @@ The way I have configured the pixel ring it will show the values on 13 of the 16
 
 ![dial](https://github.com/user-attachments/assets/3ae5f58e-c3ab-448a-8f98-8d0d4b89ea78)
 
-which comes to this (very low brightness set for my *$%&#* camera)
+which comes to this (very low brightness set for my crappy camera)
 
 ![arch_smaller](https://github.com/user-attachments/assets/57104d53-ef5a-4bc0-a8e7-451aab683f03)
 
