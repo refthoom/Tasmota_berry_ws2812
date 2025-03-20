@@ -45,11 +45,11 @@ A piece of PVC board carries the parts.
 ![front_smaller](https://github.com/user-attachments/assets/a63080fa-fd56-4773-ac3e-f7aece65f87e)
 ![back_smaller](https://github.com/user-attachments/assets/20205be8-7ac2-4d15-9790-9687afd44001)
 
-The way I have configured the pixel ring will show the values on 13 of the 16 pixels. The three ranges are divided in 4 pixels green, 4 pixels yellow and 5 pixels red. The bottom 3 pixels are unused to make for an arch like appearance, to resemble something like this
+The way I have configured the pixel ring it will show the values on 13 of the 16 pixels. The three ranges are divided in 4 pixels green, 4 pixels yellow and 5 pixels red. The bottom 3 pixels are unused to make for an arch like appearance, to resemble something like this
 
 ![dial](https://github.com/user-attachments/assets/3ae5f58e-c3ab-448a-8f98-8d0d4b89ea78)
 
-which comes to this (very low brightness set for *$%&#* camera)
+which comes to this (very low brightness set for my *$%&#* camera)
 
 ![arch_smaller](https://github.com/user-attachments/assets/57104d53-ef5a-4bc0-a8e7-451aab683f03)
 
