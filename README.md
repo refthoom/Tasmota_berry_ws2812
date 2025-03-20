@@ -40,7 +40,7 @@ Use this script as file 'WS2812_scale.be'. In Tasmota web interface, go to main 
 ![CO2 HW](https://github.com/user-attachments/assets/389de6d0-f899-42b8-9761-a223aa8f860a)
 All parts come from Ali***ss, so look there or elsewhere for the names if you want to purchase them.
 
-A piece of PVC carries the parts.
+A piece of PVC board carries the parts.
 
 ![front_smaller](https://github.com/user-attachments/assets/a63080fa-fd56-4773-ac3e-f7aece65f87e)
 ![back_smaller](https://github.com/user-attachments/assets/20205be8-7ac2-4d15-9790-9687afd44001)
