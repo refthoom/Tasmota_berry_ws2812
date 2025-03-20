@@ -28,6 +28,8 @@ There is lots of comments in the script itself, but here's is the TLDR;
 * The function show() is called to display the result,
 * which is repeated at the interval set in the cron line.
 
+NOTE: The SCD4x sensor also takes temperature measurements but please be aware that it is very sensitive to heat emitted from other parts in the project.
+
 # testing
 There is one functionality to test the config of your pixels. After the script is *manually* loaded succesfully in the berry scripting console (REPL), you can manually run the command 'show([number])' from the berry scripting console, where [number] is the number of pixels you want to see lit.
 
