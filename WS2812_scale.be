@@ -110,6 +110,7 @@ def calc_num_pxs(snsr)
 		if (snsr - sensor_start_range) > 0
 			if use_snsr_ceil
 				nums = int( math.ceil( ( snsr - sensor_start_range ) / real(sensor_step) ) )
+				# instead of math.ceil you could use math.round
 				# print('nums_ceil is ', nums) # debug
 			else 
 				nums = int((snsr - sensor_start_range) / sensor_step)
