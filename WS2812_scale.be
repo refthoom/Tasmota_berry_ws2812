@@ -27,6 +27,8 @@
 
 # json lib to read sensors
 import json # leave out when repated testing in REPL
+# math lib to round up to step value
+import math
 # sensor name (see console /SENSOR lines to get the correct name)
 var sensor_name = 'SCD40'
 var sensor_data_A = 'CarbonDioxide'
@@ -37,6 +39,7 @@ var sensor_start_range = 400
 var sensor_first_threshold = 800 # three colors means two thresholds where the color changes
 var sensor_second_threshold = 1200
 var sensor_end_range = 1700
+var use_snsr_ceil = 1 # boolean, if 1 round up the sensor values, else leave as is
 # number of pixels per color and other settings
 # sensor_step determines the number of pixels being used
 var pixels_min = 1 # fixed number of pixels to be lit on beginning of the scale
@@ -98,14 +101,20 @@ def calc_sensor()
 end
 #############################
 
-# number of pixels that are on, derived from the sensor value
+# calculate number of pixels that are on, derived from the sensor value
 #############################
 def calc_num_pxs(snsr)
 	# calculate the number of pixels to be lit up
 	var nums = pixels_min # minimum pixels to be on
 	if snsr > 0
 		if (snsr - sensor_start_range) > 0
-			nums = int((snsr - sensor_start_range) / sensor_step)
+			if use_snsr_ceil
+				nums = int( math.ceil( ( snsr - sensor_start_range ) / real(sensor_step) ) )
+				# print('nums_ceil is ', nums) # debug
+			else 
+				nums = int((snsr - sensor_start_range) / sensor_step)
+				# print('nums_int is ', nums) # debug
+			end
 		end
 		if nums >= pixels_all
 			nums = pixels_all
