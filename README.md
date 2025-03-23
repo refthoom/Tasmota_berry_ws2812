@@ -8,12 +8,11 @@ Although I made this script for my own purpose of showing CO2 values, the code i
 * number of pixels in your strip,
 * any sensor with integer values,
 * maximum sensor range,
-* minimum pixel(s) to lite up (to show on status),
+* minimum pixels to be on,
 * 3 color ranges
 * pixel colors per range
 * number of pixels per color range,
 * minimum brightness,
-* minimum pixels to be on,
 * pixels to skip at the beginning and
 * fixed or dynamic brightness (increased brightness by increased number of pixels to attract attention to high values that could be dangerous).
 * Also, the last line of the script sets a cron (C style), it is set to 1 minute interval. You can change this to whatever you need. Note that a high interval frequnency may impact performance of the MCU.
@@ -34,15 +33,17 @@ NOTE: The SCD4x sensor also takes temperature measurements. Please be aware that
 ![CO2 HW](https://github.com/user-attachments/assets/389de6d0-f899-42b8-9761-a223aa8f860a)
 All parts come from Ali***ss, so look there or elsewhere for the names if you want to purchase them.
 
-Visit [this page](https://tasmota.github.io/install/) to install Tasmota. When finished, go to Tasmota's (web UI) main page >> configuration >> template and fill in as shown here. Hit save and wait for reboot to finish. Then go to main >> configuration >> other, tick the box 'Activate' under 'Template'. Again hit save and wait for the reboot to finish.
+Visit [this page](https://tasmota.github.io/install/) to install Tasmota. After succesfully flashing your ESP, Tasmota wil start in AP mode. Connect your PC or phone to it and configure your wifi settings. After saving those, Tasmota will reboot again, after which it's IP address will be shown *briefly!* so keep your eyes on the screen :-) 
 
-Next, power down your ESP and connect your parts as shown here. After that, power on and connect to the ESP for the software part below. 
+Then with your browser, go to the shown IP address to Tasmota's main page >> configuration >> template and fill in as shown above. Hit save and wait for reboot to finish. Then go to main >> configuration >> other, tick the box 'Activate' under 'Template'. Again hit save and wait for the reboot to finish.
 
-# deploy
-Use [the script](https://github.com/refthoom/Tasmota_berry_ws2812/blob/main/WS2812_scale.be) as file 'WS2812_scale.be'. In Tasmota web interface, go to main >> tools >> manage files system >> create or upload >> the 'WS2812_scale.be' file from this repository. Next, if not already there, create the file autoexec.be and add the line 'load('WS2812_scale.be')' in there, without the '. Finally, restart Tasmota from the main menu. After restart, go to main >> tools >> console and check if autoxec.be is loaded successfully. As the cron is set to 1 minute interval, it will take at least one minute before you see any pixels light up.
+Next, power down your ESP and connect your parts as shown above. After that, power on and connect to the ESP's IP address with your browser. From the main page you can test your WS2812 by using the sliders and on/off button. If that all goes nicely, continue for the berry script part below. 
+
+# berry script
+Use [the script](https://github.com/refthoom/Tasmota_berry_ws2812/blob/main/WS2812_scale.be) as file 'WS2812_scale.be'. In Tasmota web interface, go to main >> tools >> manage files system >> create or upload >> the 'WS2812_scale.be' file from this repository. Next, if not already there, create the file 'autoexec.be' and add the line 'load('WS2812_scale.be')' in there, without the '. Finally, restart Tasmota from the main menu. After restart, go to main >> tools >> console and check if autoxec.be is loaded successfully. As the cron is set to 1 minute interval, it will take at least one minute before you see any pixels light up.
 
 # testing
-There is one functionality to test the config of your pixels. After the script is *manually* loaded succesfully in the berry scripting console (REPL), you can manually run the command 'show([number])' from the berry scripting console, where [number] is the number of pixels you want to see lit.
+There is one functionality to test the config of your pixels. After the script is *manually* loaded succesfully in the berry scripting console (copy-paste the script there), you can manually run the command 'show([number])' from the berry scripting console, where [number] is the number of pixels you want to see lit. This should show immediately but will be overriden by the script, running every minute.
 
 # project fulfillment
 Here, a piece of PVC board carries the parts.
